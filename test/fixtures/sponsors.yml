@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first_sponsor:
+  name: Guugel
+
+second_sponsor:
+  name: Gigantichard

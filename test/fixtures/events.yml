@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first_event:
+  name: Tech Conference
+  start: 2025-01-15 09:00:00
+  end: 2025-01-15 17:00:00
+  location: one
+
+second_event:
+  name: Music Festival
+  start: 2025-02-20 18:00:00
+  end: 2025-02-21 02:00:00
+  location: two

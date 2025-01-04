@@ -1,0 +1,10 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first_ticket:
+  event: first_event
+  price: 50.0
+
+second_ticket:
+  event: second_event
+  price: 100.0
+

@@ -6,6 +6,11 @@ services:
     volumes:
       - "./:/app"
     command: rails server -b 0.0.0.0
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://postgres:password@postgres:5432/app_development
 
   tailwind:
     build: .
@@ -13,3 +18,20 @@ services:
       - "./:/app"
     command: rails tailwindcss:watch
     stdin_open: true
+  
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: app_development
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data: {}
